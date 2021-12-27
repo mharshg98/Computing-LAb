@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+
+
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #eeeeee;
+}
+
+
+
+</style>
+
+
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Admin Dashboard
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="{% static 'css/admin/material-dashboard.css' %}" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{% static 'css/admin/demo.css' %}" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo"><a href="" class="simple-text logo-normal">
+          ADMIN DASHBOARD
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          
+          <li class="nav-item active ">
+            <a class="nav-link" href="">
+              <i class="material-icons">unarchive</i>
+              <p>ADD NOTICE</p>
+            </a>
+          </li>
+
+           <li class="nav-item ">
+            <a class="nav-link" href="shownotices">
+              <i class="material-icons">content_paste</i>
+              <p>SHOW NOTICES</p>
+            </a>
+          </li>
+		  
+		  <li class="nav-item">
+            <a class="nav-link" href="addStudent">
+              <i class="material-icons">unarchive</i>
+              <p>ADD STUDENTS</p>
+            </a>
+          </li>
+		  
+		  <li class="nav-item">
+            <a class="nav-link" href="showstudent">
+              <i class="material-icons">content_paste</i>
+              <p>SHOW STUDENTS</p>
+            </a>
+          </li>
+		  
+		  <li class="nav-item">
+            <a class="nav-link" href="updatereceipt">
+              <i class="material-icons">unarchive</i>
+              <p>UPLOAD HOME IMAGE</p>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;">ADD NOTICE</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            
+            <ul class="navbar-nav">
+              
+              
+              <li>
+                  <a class="dropdown-item" href="logout">Log out</a>
+              </li>  
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Add Notice</h4>
+                  <p class="card-category">To add notice in database Fill This Form</p>
+                </div>
+                <div class="card-body">
+                 {% if flag_done %}
+                  <h3 style="color:red;" >Announcement added succesfully</h3>
+                  {% endif %}
+                  <form method="POST" action="" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <input type="text" name="title" class="form-control" placeholder="Title of Announcement" required="required" /><br>
+                  <input type="text" name="subtitle" class="form-control" placeholder="Sub title" required="required" /><br>
+                  <input type="textarea" name="desc" class="form-control" placeholder="Description" required="required" /><br>
+                  <input type="file" name="file" class="form-control" placeholder="Upload File" required="required" /><br>
+                  <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button><br>
+                  </form>
+                 
+                  
+                  
+                </div>
+              </div>
+            </div>
+			
+			
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+ 
+  
+  
+</body>
+
+</html>
