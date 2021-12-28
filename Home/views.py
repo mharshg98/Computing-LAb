@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 # Create your views here.
 from django.http import HttpResponse
-from .models import Announcement,Enroll_Data,RegisteredStudents
+from .models import Announcement,Enroll_Data,RegisteredStudents,FrontImage
 
 def index(request):
     return HttpResponse('hello home page')
@@ -84,4 +84,20 @@ def showstudent(request):
         return render(request,'admin/showstudent.html',{'data':data})
 
 def uploadhomeimage(request):
-    return HttpResponse('uploadimagepage')
+    if request.method == "GET":
+        data = FrontImage.objects.all()
+        return render(request, 'admin/uploadhomeimage.html',{'data':data,'flag_done':False})
+    else:
+        title = request.POST['title']
+        file = request.FILES.get('file')
+        data = FrontImage.objects.create(image=file,title=title)
+        data = FrontImage.objects.all()
+        return render(request,'admin/uploadhomeimage.html',{'data':data,'flag_done':True})
+
+def deleteImageData(request):
+    if request.method == "POST":
+        id=request.POST["id"]
+        FrontImage.objects.filter(id=id).delete()
+        response={'done':True}
+        print("deleted")
+        return HttpResponse(json.dumps(response))

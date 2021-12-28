@@ -12,5 +12,5 @@ urlpatterns = [
      path('addStudent',views.addStudent ,name="addStudent"),
      path('showstudent',views.showstudent ,name="showstudent"),
      path('uploadhomeimage',views.uploadhomeimage ,name="uploadhomeimage"),
-
+     path('deleteImageData',views.deleteImageData ,name="deleteImageData"),
 ]

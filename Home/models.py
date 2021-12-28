@@ -32,3 +32,29 @@ class RegisteredStudents(models.Model):
 
     def __str__(self):
         return self.Reg_no
+
+class FrontImage(models.Model):
+    id = models.AutoField(primary_key = True)
+    title=models.CharField(max_length=100,default=' ')
+    date = models.DateTimeField(default = timezone.now)
+    image = models.ImageField(upload_to = 'FrontImage')
+
+from django.contrib.auth.models import User
+class Student(models.Model):
+    id=models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
+    choices = ( ("CIVIENG" , "CIVIENG"), ("COMPENG" , "COMPENG"), ("ECIENG", "ECIENG"), ("ECTELEG", "ECTELEG"), ("ITENG", "ITENG"), ("MECHENG", "MECHENG"),  )
+    choices1 = ( ("BTECH" , "BTECH"), ("MTECH" , "MTECH"))
+    branch=models.CharField(choices = choices,max_length=100)
+    course=models.CharField(choices = choices1,max_length=100)
+    Reg_no=models.CharField(unique=True,max_length=10)
+    roll_no=models.CharField(unique=True,max_length=10)
+    name=models.CharField(max_length=100)
+    session=models.CharField(null=True,max_length=100)
+    email=models.EmailField(unique=True,null=True)
+    mobile=models.CharField(null=True,max_length=10)
+    address=models.CharField(null=True,max_length=100)
+
+    def __str__(self):
+        return self.Reg_no
+
+
