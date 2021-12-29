@@ -8,7 +8,20 @@ from django.http import HttpResponse
 from .models import Announcement,Enroll_Data,RegisteredStudents,FrontImage
 
 def index(request):
-    return HttpResponse('hello home page')
+    data_img=FrontImage.objects.all()
+    data_ann=Announcement.objects.all()
+    return render(request,'admin/index.html',{'img':data_img,'annoc':data_ann})
+
+def campus(request):
+    return render(request,'admin/campus.html')
+
+def history(request):
+    return render(request, 'admin/history.html')
+
+def programs(request):
+    return render(request, 'admin/programs.html')
+def ranking(request):
+    return render(request, 'admin/ranking.html')
 
 def logout(request):
     auth.logout(request)

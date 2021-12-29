@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/admin/style1.css' %}"/>
         <title>NITK Home Page</title>    
     </head>
     <body>
@@ -25,21 +26,21 @@
                     <p>Login</p>
                     <div id="sub-login">
                         <ul id="sub-login">
-                            <li><a href="">Admin</a></li>
-                            <li><a href="">Student</a></li>
+                            <li><a href='adminLogin'>Admin</a></li>
+                            <li><a href="student/login">Student</a></li>
                             <li><a href="">Faculty</a></li>
                         </ul>
                     </div>
                 </div>
                 <div id="already-loggedin-tab">
                     <p><a href="">Profile</a></p>
-                    <p><a href="">Logout</a></p>
+                    <p><a href="logout">Logout</a></p>
                 </div>
             </div>
             <!--Done top-bar-->
 
             <div class="logo-bar">
-                <img src="images/logo1.png"/>
+                <img src="{% static 'img/logo1.png' %}"/>
                 <div id="college-name">
                     <h3>National Institute of Technology</h3>
                     <h3>Karnataka, Surathkal</h3>
@@ -49,17 +50,17 @@
 
             <div class="nav-bar">
                 <ul type="none">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="">Home</a></li>
                     <li id="institute"><a href="" id="ins">Institute</a>
                         <div id="institute-submenu">
                             <ul>
-                                <li><a href="campus.html">Campus</a></li>
-                                <li><a href="history.html">History</a></li>
+                                <li><a href="campus">Campus</a></li>
+                                <li><a href="history">History</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="programs">Programs</a></li>
+                    <li><a href="ranking">Ranking</a></li>
                 </ul>
             </div>
             <!--Done nav-bar-->
@@ -69,12 +70,16 @@
         <div class="main">
             <div class="slider-box">
                 <div id="slider">
-                    <img src="images/b2.jpg"/>
-                    <img src="images/b3.jpg"/>
+                  {% for i in img %}
+                    <img src="media/{{i.image}}"/>
+                    
+
+                {% endfor %}
                 </div>
                 <div id="indicators">
-                    <span id="btn1"></span>
-                    <span id="btn2"></span>
+                 {% for i in img %}
+                    <span id="{{i.id}}"></span>
+                 {% endfor %}
                 </div>
             </div>
             <!--Done slider-box-->
@@ -84,18 +89,21 @@
                     <h1 id="announcement-title">Announcements</h1>
                     <div id="line"></div>
                 </div>
+                {% for i in annoc %}
                 <div id="announcement-box">
                     <div id="content">
-                        <h3>Title of announcement</h3>
-                        <h5>Subtitle of announcement</h5>
-                        <p>description asuifgs asugdfoasbduisa aispfhjkas mnasfoabsfj asoihasf asoiaksfbas ioasfjkasvf asfuabsfjbas
-                            sabfbslkfb asfualksfv asjfgaskfnlksacbcb sjbjb ckhsd.
+                        <h3>{{i.title}}</h3>
+                        <h5>{{i.subtitle}}</h5>
+                        <p>{{i.desc}}
                         </p>
                     </div>
                     <div id="reference">
                         <img src="" alt="reference"/>
                     </div>
                 </div>
+
+                {% endfor %}
+
             </div>
             <!--Done announcement-box-->
 
@@ -115,7 +123,7 @@
                         </ul>
                     </div>
                     <div id="image-box">
-                        <img src="images/MB.jpg" alt="college image"/>
+                        <img src="{% static 'img/MB.jpg' %}" alt="college image"/>
                     </div>
                 </div>
             </div>
@@ -124,7 +132,7 @@
 
         <div class="footer">
             <div class="big-footer">
-                <img src="images/logo2.png" width="40px"/>
+                <img src="{% static 'img/logo2.png' %}" width="40px"/>
                 <h2>NITK Surathkal</h2>
                 <p>NH 66, Srinivasnagar</p>
                 <p>Surathkal, Mangalore</p>
@@ -139,6 +147,6 @@
                 </div>
             </div>
         </div><!--Done footer-->
-        <script src="javascript/script.js"></script>
+        <script src="{% static 'js/admin/script.js' %}"></script>
     </body>
 </html>

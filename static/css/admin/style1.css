@@ -1,0 +1,437 @@
+html, body, div {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: rgb(240,50,50);
+}
+
+/*  Top-bar------------------------------------------------------------------------------------------------*/
+
+.top-bar {
+    height: 50px;
+    padding: 0 200px 0 200px;
+    background: rgb(21, 13, 59);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Contact details part -------------------------------------------*/
+
+#contact-details {
+    display: flex;
+    align-items: center;
+}
+
+#contact-details i {
+    color: rgb(150,150,150);
+    padding: 10px;
+}
+
+#contact-details a {
+    text-decoration: none;
+    color: rgb(150,150,150);
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#contact-details a:hover {
+    color: rgb(220,220,220);
+}
+
+/* Login Details part -----------------------------------------------*/
+
+#login-tab {
+    display: block;
+    height: 100%;
+    width: 100px;
+    background-color: rgb(51, 53, 99);
+}
+
+#login-tab p {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    width: 100%;
+    margin: 15px 0 15px 0;
+    text-align: center;
+}
+
+#login-tab #sub-login {
+    display: none;
+    z-index: 1;
+}
+
+#login-tab:hover #sub-login{
+    list-style: none;
+    display: block;
+    background: rgb(51, 53, 99);
+    margin: 0;
+    padding: 0;
+}
+
+#login-tab #sub-login:hover {
+    list-style: none;
+    display: block;
+}
+
+#login-tab #sub-login ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Ubuntu', 'sans-serif';
+}
+
+#login-tab #sub-login ul li a:hover {
+    font-weight: 600;
+}
+
+#login-tab #sub-login ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+/* alreddy logged in style ------------------*/
+
+#already-loggedin-tab {
+    display: none;
+    height: 100%;
+    width: 200px;
+    background-color: rgb(51, 53, 99);
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#already-loggedin-tab a {
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
+#already-loggedin-tab a:hover {
+    font-weight: 600;
+}
+
+
+/* Logos tab ----------------------------------------------------------------------------------------*/
+
+.logo-bar {
+    background: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 10px 15px -15px black;
+}
+
+.logo-bar img {
+    height: 120px;
+    margin: 0 40px 0 40px;
+}
+
+.logo-bar #college-name {
+    margin: 0 40px 0 40px;
+}
+
+.logo-bar #college-name h3 {
+    color: rgb(21, 13, 59);
+}
+
+/* Nav Bar -------------------------------------------------------------------------------------------*/
+
+.nav-bar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 0;
+}
+
+.nav-bar ul li {
+    margin: 0 40px 0 40px;
+}
+
+.nav-bar ul a {
+    text-decoration: none;
+    font-family: 'Ubuntu', 'sans-serif';
+    font-weight: 600;
+    color: rgb(21, 13, 59);
+}
+
+.nav-bar ul a:hover {
+    color: rgb(220,220,220);
+}
+
+.nav-bar ul #institute #institute-submenu {
+    display: none;
+    z-index: 1;
+}
+
+.nav-bar ul #institute #ins {
+    pointer-events: none;
+    cursor: default;
+}
+
+.nav-bar ul #institute:hover #institute-submenu {
+    display: block;
+    position: absolute;
+    background: rgb(240,50,50);
+    width: 120px;
+    height: 100px;
+}
+
+.nav-bar ul #institute #institute-submenu:hover {
+    display: block;
+    position: absolute;
+    background: rgb(240,50,50);
+    width: 120px;
+    height: 100px;
+}
+
+.nav-bar ul #institute #institute-submenu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin-top: 14px;
+}
+
+.nav-bar ul #institute #institute-submenu ul li {
+    padding: 20px 0 0 0;
+}
+
+
+
+
+
+/* Main part ------------------------------------------------------------------------------------------------*/
+/* Slider -------------------------------------------------------------------------------------------------*/
+
+.slider-box {
+    width: 100%;
+    height: 60vh;
+    background: rgba(240,240,240,1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -10px 15px -15px black;
+}
+
+#slider {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+}
+
+#indicators {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+
+#indicators span {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 50%;
+    background: rgba(240,240,240, 0.5);
+    cursor: pointer;
+}
+
+#indicators span:hover {
+    background: rgba(240,240,240,1);
+}
+
+/* Announcement ------------------------------------------------------------------------*/
+
+.announcement {
+    width: 80%;
+    /* height: 50vh; */
+    margin: 50px auto;
+}
+
+.announcement #title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+#announcement-title {
+    display: inline;
+    color:rgb(21, 13, 59);
+    font-family: 'Ubuntu', 'sans-serif';
+    font-weight: 600;
+    font-size: 3em;
+    margin: 0px 20px 0px 20px;
+}
+
+.announcement #line {
+    width: 64%;
+    height: 8px;
+    background: rgb(240,50,50);
+    border-radius: 5px;
+}
+
+#announcement-box {
+    background: rgb(235,235,235);
+    /* height: 90%; */
+    box-shadow: 0px 10px 15px -15px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#announcement-box #content {
+    margin: 20px;
+    padding: 0 40px 0 40px;
+}
+
+#announcement-box #content h3, h5 {
+    color:rgb(51, 53, 99);
+    font-family: 'Ubuntu', 'sans-serif';
+}
+
+#announcement-box #content h3 {
+    font-size: 2em;
+}
+
+#announcement-box #content h5 {
+    font-size: 1.2em;
+}
+
+#announcement-box #content p {
+    width: 50%;
+    line-height: 30px;
+    font-family: 'Ubuntu', 'sans-serif';
+}
+
+#announcement-box #reference {
+    background: whitesmoke;
+    height: 300px;             /* changed from 80% to 300px*/
+    width: 20%;
+    margin: 20px;
+    margin-right: 10%;
+}
+
+/* Mission and vision --------------------------------------------------------------------------*/
+
+.mission-vision {
+    width: 80%;
+    /* height: 50vh; */
+    margin: 50px auto;
+}
+
+.mission-vision #title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+#mission-vision-title {
+    display: inline;
+    color:rgb(21, 13, 59);
+    font-family: 'Ubuntu', 'sans-serif';
+    font-weight: 600;
+    font-size: 3em;
+    margin: 0px 20px 0px 20px;
+}
+
+.mission-vision #line {
+    width: 60%;
+    height: 8px;
+    background: rgb(240,50,50);
+    border-radius: 5px;
+}
+
+#mission-vision-box {
+    background: rgb(235,235,235);
+    /* height: 90%; */
+    box-shadow: 0px 10px 15px -15px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#mission-vision-box #content {
+    margin: 20px;
+    width: 60%;
+}
+
+#mission-vision-box #content ul {
+    list-style: none;
+}
+
+#mission-vision-box #content ul li {
+    padding: 20px 0 20px 0;
+    font-family: 'Ubuntu', 'sans-serif';
+    font-size: 1.2em;
+}
+
+#mission-vision-box #image-box {
+    width: 27%;
+    margin: 30px;
+    height: 85%;
+}
+
+#mission-vision-box #image-box img {
+    width: 100%;   /* changed height: 100% to width: 100% */
+    overflow: hidden;
+}
+
+
+
+/* Footer -------------------------------------------------------------------------------------------------*/
+
+.footer {
+    background: red;
+}
+
+.big-footer {
+    background: rgb(20,20,20);
+    text-align: center;
+    padding: 30px;
+    padding-top: 70px;
+}
+
+.big-footer h2 {
+    font-family: 'Ubuntu', 'sans-serif';
+    color: whitesmoke;
+    font-size:1.7em;
+}
+
+.big-footer p {
+    font-family: 'Ubuntu', 'sans-serif';
+    color: whitesmoke;
+}
+
+.small-footer {
+    background: rgb(40,40,40);
+    height:80px;
+    display: flex;
+    flex-direction: row;
+    padding: 0 15% 0 15%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-footer p {
+    font-family: 'Ubuntu', 'sans-serif';
+    color: rgba(255,255,255,0.4);
+}
+
+.small-footer #media-links a {
+    color: rgba(255,255,255,0.4);
+    font-size: 1.5em;
+    margin: 0 10px 0 10px;
+}

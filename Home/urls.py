@@ -13,4 +13,9 @@ urlpatterns = [
      path('showstudent',views.showstudent ,name="showstudent"),
      path('uploadhomeimage',views.uploadhomeimage ,name="uploadhomeimage"),
      path('deleteImageData',views.deleteImageData ,name="deleteImageData"),
+     path('campus',views.campus ,name="campus"),
+     path('history',views.history ,name="history"),
+      path('programs',views.programs ,name="programs"),
+       path('ranking',views.ranking ,name="ranking"),
+
 ]

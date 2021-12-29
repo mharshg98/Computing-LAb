@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/programstyle.css"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/admin/programstyle.css' %}"/>
         <title>NITK Programs</title>    
     </head>
     <body>
@@ -25,8 +26,8 @@
                     <p>Login</p>
                     <div id="sub-login">
                         <ul id="sub-login">
-                            <li><a href="">Admin</a></li>
-                            <li><a href="">Student</a></li>
+                           <li><a href='adminLogin'>Admin</a></li>
+                            <li><a href="student/login">Student</a></li>
                             <li><a href="">Faculty</a></li>
                         </ul>
                     </div>
@@ -40,17 +41,17 @@
 
             <div class="nav-bar">
                 <ul type="none">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li id="institute"><a href="" id="ins">Institute</a>
                         <div id="institute-submenu">
                             <ul>
-                                <li><a href="campus.html">Campus</a></li>
-                                <li><a href="history.html">History</a></li>
+                                <li><a href="campus">Campus</a></li>
+                                <li><a href="history">History</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="programs">Programs</a></li>
+                    <li><a href="ranking">Ranking</a></li>
                 </ul>
             </div>
             <!--Done nav-bar-->
@@ -185,7 +186,7 @@
 
             <div class="footer">
                 <div class="big-footer">
-                    <img src="images/logo2.png" width="40px"/>
+                    <img src="{% static 'img/logo2.png' %}" width="40px"/>
                     <h2>NITK Surathkal</h2>
                     <p>NH 66, Srinivasnagar</p>
                     <p>Surathkal, Mangalore</p>
