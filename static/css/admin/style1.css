@@ -96,7 +96,7 @@ html, body, div {
 /* alreddy logged in style ------------------*/
 
 #already-loggedin-tab {
-    display: block;
+    display: none;
     height: 100%;
     width: 200px;
     background-color: rgb(51, 53, 99);
@@ -223,10 +223,15 @@ html, body, div {
 }
 
 #slider {
-    display: inline-flex;
-    width: 100%;
+    display: flex;
+    width: 200%;
     height: 100%;
     transition: 0.6s;
+}
+
+#slider img {
+    width: 100%;
+    height: 100%;
 }
 
 #indicators {
@@ -315,11 +320,29 @@ html, body, div {
 }
 
 #announcement-box #reference {
-    background: whitesmoke;
+    /* background: whitesmoke; */
     height: 300px;             /* changed from 80% to 300px*/
     width: 20%;
     margin: 20px;
     margin-right: 10%;
+}
+
+#announcement-box #reference div {
+    width: 100%;
+    height: 40px;
+    margin: 20px;
+    margin-top: 40px; 
+}
+
+#announcement-box #reference a {
+    width: 100%;
+    height: 100%;
+    background:rgb(21, 13, 59);
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    margin: 20px;
+    font-family: 'Ubuntu', 'sans-serif';    
 }
 
 /* Mission and vision --------------------------------------------------------------------------*/

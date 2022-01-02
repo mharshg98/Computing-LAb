@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/admin/style1.css' %}"/>
+<!--Changed href-->        <link rel="stylesheet" type="text/css" href="../../static/css/admin/style1.css"/>
         <title>NITK Home Page</title>    
     </head>
     <body>
@@ -42,7 +42,6 @@
                         <ul id="sub-login">
                             <li><a href='adminLogin'>Admin</a></li>
                             <li><a href="student/login">Student</a></li>
-                            <li><a href="">Faculty</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,19 +77,26 @@
         </div>
         <!--Done header-->
 
+<!--Commented few things in slider-box container, img(src) changed, extra span, img added-->
         <div class="main">
             <div class="slider-box">
                 <div id="slider">
-                  {% for i in img %}
-                    <img src="media/{{i.image}}"/>
-                    
+                  <!-- {% for i in img %} -->
+                    <img src="../../static/img/b2.jpg"/>
+                    <img src="../../static/img/b3.jpg"/>
+                    <img src="../../static/img/image1.jpeg"/>
+                    <img src="../../static/img/image2.jpeg"/>
 
-                {% endfor %}
+                <!-- {% endfor %} -->
                 </div>
                 <div id="indicators">
-                 {% for i in img %}
+                 <!-- {% for i in img %} -->
                     <span id="{{i.id}}"></span>
-                 {% endfor %}
+                    <span id="{{i.id}}"></span>
+                    <span id="{{i.id}}"></span>
+                    <span id="{{i.id}}"></span>
+
+                 <!-- {% endfor %} -->
                 </div>
             </div>
             <!--Done slider-box-->
@@ -109,7 +115,7 @@
                         </p>
                     </div>
                     <div id="reference">
-                        <img src="media/{{i.file}}" alt="reference"/>
+<!--Added link-->       <div><a href="">More Details</a></div>
                     </div>
                 </div>
 
@@ -158,6 +164,6 @@
                 </div>
             </div>
         </div><!--Done footer-->
-        <script src="{% static 'js/admin/script.js' %}"></script>
+<!--Changed src here-->        <script src="../../static/js/admin/script.js"></script>
     </body>
 </html>

@@ -187,7 +187,7 @@ html, body, div {
 
 .placard {
     background: rgb(31, 94, 130);
-    height: 30vh;
+    height: 35vh;
     padding: 7% 20%  0 20%;
     box-shadow: 0 -10px 15px -15px black;
 }
