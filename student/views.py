@@ -30,6 +30,8 @@ def login(request):
             return redirect('login')
         
     else:
+        if((request.user.is_authenticated) and not request.user.is_superuser):
+            return redirect('home')
         return render(request,'student/login.html')
 
 def logout(request):
@@ -50,7 +52,25 @@ def register(request):
         if(RegisteredStudents.objects.filter(Reg_no=reg_no).exists()):
             data=RegisteredStudents.objects.filter(Reg_no=reg_no)
             x=data[0]
-            if(x.name==name.strip() and x.email==email.strip() and x.Reg_no==reg_no.strip() and x.roll_no==roll_no.strip() and x.course==course.strip() and x.branch==branch.strip()):
+            if(x.name.strip()!=name.strip()):
+                messages.info(request,"Please Enter The Right Name")
+                return redirect('register')
+            elif(x.email.strip()!=email.strip()):
+                messages.info(request,"Please Enter The Right Email")
+                return redirect('register')
+            elif(x.Reg_no.strip()!=reg_no.strip()):
+                messages.info(request,"Please Enter The Right Registration Number")
+                return redirect('register')
+            elif(x.roll_no.strip()!=roll_no.strip()):
+                messages.info(request,"Please Enter The Right Roll Number ")
+                return redirect('register')
+            elif(x.course.strip()!=course.strip()):
+                messages.info(request,"Please Enter The Right Roll Number ")
+                return redirect('register')
+            elif(x.branch.strip()!=branch.strip()):
+                messages.info(request,"Please Enter The Right Branch ")
+                return redirect('register')
+            else:
                 if User.objects.filter(username=username).exists():
                     messages.info(request,'Username taken please use other username')
                     return redirect('register')
@@ -60,14 +80,9 @@ def register(request):
                     data1=Student.objects.create(id=user,branch=branch,course=course,Reg_no=reg_no,roll_no=roll_no,name=name,session=x.session,email=email,mobile=x.mobile,address=' ')
                     messages.info(request,"User created succesfully")
                     return redirect('login')
-            else:
-                messages.info(request,"Please Enter The Right Information")
-                return redirect('register')
         else:
             messages.info(request,"Student does't exist")
             return redirect('register')
-
-        
     else:
         return render(request,'student/register.html')
 

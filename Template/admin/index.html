@@ -22,6 +22,20 @@
                     <i class="material-icons">phone</i>
                     <a href="">+91 8389095133</a>
                 </div>
+                
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                <div id="login-tab">
+                
+                    <p><a href="logout">Logout</a></p>
+                </div>
+                    {% else %}
+                <div id="id=login-tab">
+                    <p><a href="/student/login">Profile</a></p>
+                    <p><a href="logout">Logout</a></p>
+                </div>
+                    {% endif %}
+                {% else %}
                 <div id="login-tab">
                     <p>Login</p>
                     <div id="sub-login">
@@ -32,10 +46,7 @@
                         </ul>
                     </div>
                 </div>
-                <div id="already-loggedin-tab">
-                    <p><a href="">Profile</a></p>
-                    <p><a href="logout">Logout</a></p>
-                </div>
+                {% endif %}
             </div>
             <!--Done top-bar-->
 
@@ -98,7 +109,7 @@
                         </p>
                     </div>
                     <div id="reference">
-                        <img src="" alt="reference"/>
+                        <img src="media/{{i.file}}" alt="reference"/>
                     </div>
                 </div>
 
