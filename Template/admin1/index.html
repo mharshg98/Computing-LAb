@@ -25,12 +25,12 @@
                 
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                <div id="login-tab">
+                <div id="already-loggedin-tab">
                 
                     <p><a href="logout">Logout</a></p>
                 </div>
                     {% else %}
-                <div id="id=login-tab">
+                <div id="already-loggedin-tab">
                     <p><a href="/student/login">Profile</a></p>
                     <p><a href="logout">Logout</a></p>
                 </div>
