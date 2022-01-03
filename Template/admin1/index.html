@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--Changed href-->        <link rel="stylesheet" type="text/css" href="../../static/css/admin/style1.css"/>
+<!--Changed href-->        <link rel="stylesheet" type="text/css" href="{% static 'css/admin/style1.css' %}"/>
         <title>NITK Home Page</title>    
     </head>
     <body>
@@ -26,7 +26,7 @@
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                 <div id="already-loggedin-tab">
-                
+                   <p><a href="addnotice">Profile</a></p>
                     <p><a href="logout">Logout</a></p>
                 </div>
                     {% else %}
@@ -81,22 +81,18 @@
         <div class="main">
             <div class="slider-box">
                 <div id="slider">
-                  <!-- {% for i in img %} -->
-                    <img src="../../static/img/b2.jpg"/>
-                    <img src="../../static/img/b3.jpg"/>
-                    <img src="../../static/img/image1.jpeg"/>
-                    <img src="../../static/img/image2.jpeg"/>
+                  {% for i in img %}
+                    <img src="media/{{i.image}}"/>
+                   
 
-                <!-- {% endfor %} -->
+                   {% endfor %}
                 </div>
                 <div id="indicators">
-                 <!-- {% for i in img %} -->
+                  {% for i in img %}
                     <span id="{{i.id}}"></span>
-                    <span id="{{i.id}}"></span>
-                    <span id="{{i.id}}"></span>
-                    <span id="{{i.id}}"></span>
+                   
 
-                 <!-- {% endfor %} -->
+                 {% endfor %} 
                 </div>
             </div>
             <!--Done slider-box-->
@@ -115,7 +111,7 @@
                         </p>
                     </div>
                     <div id="reference">
-<!--Added link-->       <div><a href="">More Details</a></div>
+<!--Added link-->       <div><a  target="_blank" href="media/{{i.file}}">Details</a></div>
                     </div>
                 </div>
 
@@ -164,6 +160,6 @@
                 </div>
             </div>
         </div><!--Done footer-->
-<!--Changed src here-->        <script src="../../static/js/admin/script.js"></script>
+<!--Changed src here-->        <script src="{% static 'js/admin/script.js' %}"></script>
     </body>
 </html>

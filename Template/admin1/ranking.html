@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--Changed href-->         <link rel="stylesheet" type="text/css" href="../../static/css/admin/rankingstyle.css"/>
+<!--Changed href-->         <link rel="stylesheet" type="text/css" href="{% static 'css/admin/rankingstyle.css' %}"/>
         <title>NITK Ranking</title>    
     </head>
     <body>
@@ -59,7 +59,7 @@
 
         <div class="main">
             <div class="placard">
- <!--src changed-->               <img src="../../static/img/ranking-image.jpg"/>
+ <!--src changed-->               <img src="{% static 'img/ranking-image.jpg' %}"/>
                 <!-- <div id="overlay"></div> -->
                 <h1>NIRF Ranking #10</h1>
             </div>

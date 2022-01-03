@@ -46,7 +46,7 @@ html, body, div {
 /* Login Details part -----------------------------------------------*/
 
 #login-tab {
-    display: none;
+    display: block;
     height: 100%;
     width: 100px;
     background-color: rgb(51, 53, 99);
@@ -96,7 +96,7 @@ html, body, div {
 /* alreddy logged in style ------------------*/
 
 #already-loggedin-tab {
-    display: flex;
+    display: flexbox;
     height: 100%;
     width: 200px;
     background-color: rgb(51, 53, 99);

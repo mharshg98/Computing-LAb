@@ -104,4 +104,7 @@ def editprofile(request):
         data.address=add
         data.save()
         return redirect('home')
-    return render(request, 'student/editprofile.html')
+    user=request.user
+    data=Student.objects.filter(id=user)
+    rep=data[0]
+    return render(request, 'student/editprofile.html',{'i':rep})
