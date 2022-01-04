@@ -7,8 +7,8 @@ Student
 
 To login use the following credentials:
 1. Admin Login:
-	username: ayush
-	password: ayush
+	username: *****
+	password: *****
 2. Student Login:
 	username: abhinaba
 	password: abhinaba
